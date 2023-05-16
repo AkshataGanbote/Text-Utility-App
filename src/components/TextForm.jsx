@@ -53,10 +53,12 @@ export default function TextForm(props) {
     setText(newText.join(" "));
   }
 
-  // const btnStyle = {
-  //   color : props.theme ==='dark' ? 'rgb(13,202,240)' : 'rgb(13,202,240)', 
-  //   backgroundColor : props.theme ==='dark' ? '#222E35' : 'white'
-  // }
+  const btnStyle = {
+    color : props.theme ==='dark' ? 'rgb(13,202,240)' : '#198754', 
+    backgroundColor : props.theme ==='dark' ? '#222E35' : 'white',
+    // #198754 - green - success btn
+    borderColor : props.theme ==='dark' ? 'rgb(13,202,240)' : '#198754',
+  }
 
   // Main return statement
   return (
@@ -67,7 +69,7 @@ export default function TextForm(props) {
             <textarea 
               className="form-control form-control-outline-primary mb-3" 
               id="myBox" 
-              rows="10"
+              rows="9"
               value={text}
               onChange={handleChange}
               placeholder='Type or paste your text...'
@@ -84,44 +86,53 @@ export default function TextForm(props) {
         {/* rgb(18 180 212) */}
 
         <div className="btnContainer">
+          {/* <button 
+            //  Button style 1 : Create other than bootstrap color button
+            style={btnStyle} 
+            className="btn me-2 my-1" onClick={handleUpClick}>Convert to Uppercase
+          </button> */}
+
           <button 
-            // style={btnStyle} 
-            className="btn btn-success me-2 my-1" onClick={handleUpClick}>Convert to Uppercase
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleUpClick}>Convert to Uppercase
           </button>
 
           <button 
-            // style={btnStyle} 
-            className="btn btn-success me-2 my-1" onClick={handleLowClick}>Convert to Lowercase
+            // Button style 2 : Change to outline infor on dark mode - Dark mode hover
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleLowClick}>Convert to Lowercase
           </button>
 
+          {/* <button 
+            // Button style 3  : Both Outline buttons - Hover for both
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-outline-success'}  me-2 my-1`} onClick={handleCapitalize}>Capitalize
+          </button> */}
+
           <button 
-            // style={btnStyle}
-            className="btn btn-success me-2 my-1" onClick={handleCapitalize}>Capitalize
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCapitalize}>Capitalize
           </button>
 
           <button
-            // style={btnStyle}  
-            className="btn btn-success me-2 my-1" onClick={handleCopy}>Copy Text
+              
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCopy}>Copy Text
           </button>
 
           <button 
             // style={btnStyle}
-            className="btn btn-success me-2 my-1" onClick={handleSpeak}>Speak
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>Speak
           </button> 
 
           <button 
             // style={btnStyle}
-            className="btn btn-success me-2 my-1" onClick={handleStop}>Stop
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleStop}>Stop
           </button> 
           
           <button
             // style={btnStyle} 
-            className="btn btn-success me-2 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces
           </button> 
 
           <button 
             // style={btnStyle}
-            className="btn btn-success me-2 my-1" onClick={handleClear}>Clear Text
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleClear}>Clear Text
           </button>
         </div>
 

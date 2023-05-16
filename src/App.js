@@ -4,6 +4,13 @@ import {useState} from 'react'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Footer from './components/Footer';
+import FooterTrials from './components/FooterTrials';
+import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
 
@@ -24,19 +31,20 @@ function App() {
     }
   }
 
-
-
   return (
-    <div>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <div className="container"> 
-        <TextForm theme={theme}/>
-      </div>
-      <Footer/>
-    </div>
+    <>
+      <Router>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <div className="container"> 
+        <Routes>
+            <Route path="/about" element={<About/>} />
+            <Route path="/" element={<TextForm theme={theme}/>} />
+        </Routes>
+        </div>
+        <Footer/>
+      </Router>
+    </>
   );
 }
 
 export default App;
-
-// Index.css & App.css -> removed completely

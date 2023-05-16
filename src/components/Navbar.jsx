@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export default function Navbar(props) {
     return (
@@ -7,7 +8,7 @@ export default function Navbar(props) {
           // #e6fd0d17  #A5E3B9
         >
           <div className="container-fluid mx-3">
-            <a className="navbar-brand mx-3" href="/">TextUtils</a>
+            <Link className="navbar-brand mx-3" to="/">TextUtils</Link>
 
             <button className="navbar-toggler mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon mx-1 "></span>
@@ -17,11 +18,11 @@ export default function Navbar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">Home</a>
+                  <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   
-                  <a className="nav-link" href="/">About</a>
+                  <Link className="nav-link" to="/about">About</Link>
                 </li>
               </ul>
               <form className="d-flex mx-3" role="search">
@@ -39,7 +40,6 @@ export default function Navbar(props) {
                   />
                   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Change Theme</label>
                 </div>
-                
               </form>
             </div>
           </div>
