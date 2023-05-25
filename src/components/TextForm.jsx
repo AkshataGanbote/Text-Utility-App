@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './TextForm.css';
 
 export default function TextForm(props) {
   const [text, setText] = useState("");

@@ -9,7 +9,8 @@ import About from './components/About';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <div className="container"> 
         <Routes>
-            <Route path="/about" element={<About/>} />
+            <Route path="/about" element={<About theme={theme}/>} />
             <Route path="/" element={<TextForm theme={theme}/>} />
         </Routes>
         </div>
