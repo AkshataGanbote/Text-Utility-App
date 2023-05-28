@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './TextForm.css';
 
 export default function TextForm(props) {
+  const [buttonText, setButtonText] = useState('Speak 🔊');
+
   const [text, setText] = useState("");
   
   let handleChange = (event)=>{
@@ -24,18 +26,39 @@ export default function TextForm(props) {
     setText("");
   }
 
+  
+  const handleSpeak = () =>{
+    if(buttonText === 'Speak 🔊'){
+      let msg = new SpeechSynthesisUtterance();
+      msg.text = text;
+      window.speechSynthesis.speak(msg);
+      setButtonText('Stop 🔇');
+    }
+    else{
+      setButtonText('Speak 🔊');
+      let msg = new SpeechSynthesisUtterance();
+      msg.text = text;
+      window.speechSynthesis.cancel();
+      
+    }
+  }
 
-  const handleSpeak = () => {
+
+/*  const handleSpeak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
   }
+  */
   
+  /*
   const handleStop = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.cancel();
   }
+
+  */
 
   const handleCapitalize = () => {
     let newText = text.split(" ").map(el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase()).join(" ");
@@ -52,13 +75,6 @@ export default function TextForm(props) {
   const handleExtraSpaces = () => {
     var newText = text.split(/[ ]+/);
     setText(newText.join(" "));
-  }
-
-  const btnStyle = {
-    color : props.theme ==='dark' ? 'rgb(13,202,240)' : '#198754', 
-    backgroundColor : props.theme ==='dark' ? '#222E35' : 'white',
-    // #198754 - green - success btn
-    borderColor : props.theme ==='dark' ? 'rgb(13,202,240)' : '#198754',
   }
 
   // Main return statement
@@ -84,56 +100,41 @@ export default function TextForm(props) {
             
         </div>
 
-        {/* rgb(18 180 212) */}
-
         <div className="btnContainer">
+          <button 
+            // className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>Speak 🔊
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>{buttonText}
+          </button> 
+
           {/* <button 
-            //  Button style 1 : Create other than bootstrap color button
-            style={btnStyle} 
-            className="btn me-2 my-1" onClick={handleUpClick}>Convert to Uppercase
-          </button> */}
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleStop}>Stop 🔇
+          </button>  */}
 
           <button 
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleUpClick}>Convert to Uppercase
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleUpClick}>To Uppercase &uarr;&uarr;
           </button>
 
           <button 
             // Button style 2 : Change to outline infor on dark mode - Dark mode hover
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleLowClick}>Convert to Lowercase
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleLowClick}>To Lowercase &darr;&darr;
           </button>
 
-          {/* <button 
-            // Button style 3  : Both Outline buttons - Hover for both
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-outline-success'}  me-2 my-1`} onClick={handleCapitalize}>Capitalize
-          </button> */}
-
           <button 
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCapitalize}>Capitalize
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCapitalize}>Capitalize &uarr;&darr;
           </button>
 
           <button
               
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCopy}>Copy Text
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleCopy}>Copy Text 📝
           </button>
 
-          <button 
-            // style={btnStyle}
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>Speak
-          </button> 
-
-          <button 
-            // style={btnStyle}
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleStop}>Stop
-          </button> 
           
           <button
-            // style={btnStyle} 
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces &harr;
           </button> 
 
           <button 
-            // style={btnStyle}
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleClear}>Clear Text
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleClear}>Clear Text ⛔
           </button>
         </div>
 

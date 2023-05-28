@@ -1,31 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 export default function About(props) {
-
-    // Creating state objects
-
-    // For Changing Colors 
-    // const [modeStyle, setModeStyle] = useState({
-    //     color : 'dark',
-    //     backgroundColor : 'light',
-    // })
-
-
-    // const toggleStyle = () =>{
-    //     if(modeStyle.color === 'dark'){
-    //         setModeStyle({
-    //             color : 'white',
-    //             backgroundColor : 'black'
-    //         })
-    //     }
-
-    //     else{
-    //         setModeStyle({
-    //             color : 'black',
-    //             backgroundColor : 'white'
-    //         })
-    //     }
-    // }
 
     const changeTheme1 = {
         color : props.theme ==='dark' ? 'white' : 'black',

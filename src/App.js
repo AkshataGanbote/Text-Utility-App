@@ -1,16 +1,13 @@
 import './App.css';
 import {useState} from 'react'
-// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Footer from './components/Footer';
-import FooterTrials from './components/FooterTrials';
 import About from './components/About';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
