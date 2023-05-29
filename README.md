@@ -39,9 +39,11 @@ It also shows :
 
 <h3>🤩 Preview</h3>
 
-![Screenshot (183) ](https://github.com/AkshataGanbote/Text-Utility-App/assets/117456092/450c9209-ea58-4fe8-9857-bf80d75e68d3)
+![Screenshot (184)](https://github.com/AkshataGanbote/Text-Utility-App/assets/117456092/36598f4c-4582-4e60-ac11-a9304d027206)
+
 
 <h5> Dark Mode</h6>
 
-![Screenshot](https://github.com/AkshataGanbote/Text-Utility-App/assets/117456092/13618964-35bb-4098-8ef2-b2935ddc4e1c)
+
+![Screenshot (185)](https://github.com/AkshataGanbote/Text-Utility-App/assets/117456092/e627efef-c7cf-4a3c-b6d3-78d6697c7dc6)
 
