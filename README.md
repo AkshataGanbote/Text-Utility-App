@@ -3,7 +3,7 @@
 Text Utility App is a text to audio converter and can be used to manipulate the text in different ways.
 Additionally, it also counts words, characters and also shows average reading time for your text.  
 
-Try App Here :- https://akshatas-text-utility-app.netlify.app/
+Try App Here :- https://text-utility-text-to-speech.netlify.app/
     
 ***
 <h3> 🔥Features</h3>
