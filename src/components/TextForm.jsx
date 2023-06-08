@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './TextForm.css';
 
 export default function TextForm(props) {
-  const [buttonText, setButtonText] = useState('Speak 🔊');
+  // const [buttonText, setButtonText] = useState('Speak 🔊');
 
   const [text, setText] = useState("");
   
@@ -26,7 +26,7 @@ export default function TextForm(props) {
     setText("");
   }
 
-  
+  /*
   const handleSpeak = () =>{
     if(buttonText === 'Speak 🔊'){
       let msg = new SpeechSynthesisUtterance();
@@ -42,14 +42,15 @@ export default function TextForm(props) {
       
     }
   }
+  */
 
 
-/*  const handleSpeak = () => {
+  const handleSpeak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
   }
-  */
+  
   
   /*
   const handleStop = () => {
@@ -102,8 +103,8 @@ export default function TextForm(props) {
 
         <div className="btnContainer">
           <button 
-            // className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>Speak 🔊
-            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>{buttonText}
+            className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>Speak 🔊
+            {/* className={`btn ${props.theme ==='dark' ? 'btn-outline-info' : 'btn-success'}  me-2 my-1`} onClick={handleSpeak}>{buttonText} */}
           </button> 
 
           {/* <button 
