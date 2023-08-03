@@ -41,7 +41,7 @@ It also shows :
 
 ***
 
-<h3>🛠️ Technology Used</h3>
+<h3>💻 Technology Used</h3>
 
 - React.JS
 
@@ -51,4 +51,4 @@ It also shows :
 
 ***
 
-
+<h2> Do not forget to give a star! ⭐🤗 </h2>
